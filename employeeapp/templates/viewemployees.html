@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employees</title>
+</head>
+<body>
+
+<h1>All Employees</h1>
+
+<table border="1">
+
+<tr>
+
+    <th>Image</th>
+    <th>Emp ID</th>
+    <th>Name</th>
+    <th>Department</th>
+    <th>Salary</th>
+    <th>Designation</th>
+    <th>Actions</th>
+
+</tr>
+
+{% for i in employees %}
+
+<tr>
+
+    <td>
+        <img src="{{ i.image.url }}" width="100">
+    </td>
+
+    <td>{{ i.empid }}</td>
+    <td>{{ i.name }}</td>
+    <td>{{ i.deptname }}</td>
+    <td>{{ i.salary }}</td>
+    <td>{{ i.designation }}</td>
+
+    <td>
+
+        <a href="/single/{{ i.id }}">View</a>
+
+        <a href="/update/{{ i.id }}">Update</a>
+
+        <a href="/delete/{{ i.id }}">Delete</a>
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
